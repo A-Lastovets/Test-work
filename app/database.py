@@ -6,7 +6,13 @@ from app.models import Base
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+user = os.getenv("POSTGRES_USER")
+password = os.getenv("POSTGRES_PASSWORD")
+host = os.getenv("POSTGRES_HOST")
+port = os.getenv("POSTGRES_PORT", "5432")
+db = os.getenv("POSTGRES_DB")
+
+DATABASE_URL = f"postgresql://{user}:{password}@{host}:{port}/{db}"
 
 if not DATABASE_URL:
     raise RuntimeError("DATABASE_URL is not set in .env")
