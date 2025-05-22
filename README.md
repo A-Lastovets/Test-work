@@ -39,7 +39,11 @@ cd book-app
 Create a `.env` file:
 
 ```env
-DATABASE_URL=postgresql://user:password@db:5432/books_db
+POSTGRES_HOST=
+POSTGRES_PORT=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_DB=
 ```
 
 > Replace `user`, `password`, and `books_db` with your actual PostgreSQL credentials.
